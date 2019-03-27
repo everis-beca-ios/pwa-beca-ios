@@ -1,0 +1,31 @@
+<div style="text-align:center;" class="content" fxLayout="column">
+  <div class="head-bar">
+      Beca IOS
+    </div>
+    <div class="content">
+      <img
+        width="100"
+        height="100"
+        alt="Angular Logo"
+        style="border-radius:50%; margin-top: 16px"
+        src="{{ userData.picture }}"
+      />
+    </div>
+
+    <div style="margin-top: 16px">
+      <h2>
+        {{ userData.name }}
+      </h2>
+    </div>
+
+    <div class="details-card" style="text-align:center;">
+        <h4>Descrição</h4>
+        <div class="content">
+            <p>{{ userData.desc }}</p>
+        </div>
+    </div>
+
+    <div class="content" style="margin-top: 16px"></div>
+</div>
+
+<router-outlet></router-outlet>

@@ -13,10 +13,10 @@
 
 	<div class="profile-card" *ngFor="let profile of profiles" (click)="showDetails(profile)">
 		<div class="div-image">
-			<img class="image" src="{{profile.image}}" alt="Photo of User">
+			<img class="image" src="{{profile.picture ? profile.picture : imageDefault}} ">
 			<div class="div-info">
 				<span>{{profile.name}}</span>
-				<span>{{profile.description}}</span>
+				<span>{{profile.desc}}</span>
 			</div>
 		</div>
 	</div>
