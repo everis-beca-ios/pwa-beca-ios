@@ -1,0 +1,28 @@
+// Base
+@import '../variables';
+@import '../mixins';
+
+.button {
+	@include transition;
+	border: none;
+	border-radius: 4px;
+	font-family: $font-family-base;
+	font-size: 1rem;
+	min-height: 50px;
+	padding: 10px 20px;
+	width: 100%;
+
+	&-default {
+		background: $primary-color;
+		color: $white-color;
+
+		&:hover {
+			background-color: $secondary-color;
+		}
+
+		&:focus,
+		&:active {
+			background-color: darken($secondary-color, 3%);
+		}
+	}
+}
