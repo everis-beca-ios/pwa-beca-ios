@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,29 +14,15 @@ export class ProfileListComponent implements OnInit {
   imageDefault: string = 'https://cdn3.vectorstock.com/i/1000x1000/38/42/hacker-character-avatar-icon-vector-11573842.jpg';
   constructor(
     private router: Router, private activateRouter: ActivatedRoute, private httclient: HttpClient
-  ) {
-    // this.profiles = [
-    //   { name: 'Aluno 1', description: 'Descrição 1', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
-    //   { name: 'Aluno 2', description: 'Descrição 2', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'}
-    // ];
-   }
+  ) {}
 
   ngOnInit() {
     this.getProfileData();
     this.getProfileList();
   }
 
-  getProfileData(){
-    this.activateRouter.params.subscribe(params => {
-      this.name = params.name;
-    });
+  getProfileData(){    
+    this.name = localStorage.getItem('username');
   }
 
   getProfileList() {

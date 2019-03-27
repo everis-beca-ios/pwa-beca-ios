@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileListComponent } from './profile-list/profile-list.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { ProfileListComponent } from './profile-list/profile-list.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
