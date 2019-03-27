@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile-list',
@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ProfileListComponent implements OnInit {
   profiles: any;
+  name: string;
   constructor(
-    private router: Router
+    private router: Router,
+    private activatedRouter: ActivatedRoute
   ) {
     this.profiles = [
       { name: 'Aluno 1', description: 'Descrição 1', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg'},
@@ -25,11 +27,13 @@ export class ProfileListComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.getProfileList();
+    this.getProfileData();
   }
 
-  getProfileList(){
-
+  getProfileData(){
+    this.activatedRouter.params.subscribe(params => {
+      this.name = params.name;
+    })
   }
 
   showDetails(profile: any){
