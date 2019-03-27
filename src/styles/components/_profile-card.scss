@@ -1,23 +1,29 @@
+@import '../mixins';
 
 .profile-card {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  
-  &-content {
-    border-radius: 15px;
-    border: 1px solid #efefef;
-    box-shadow: 0 2px 5px rgba(#000000, .2);
-    display: flex;
-    margin: 0 auto;
-    padding: 15px;
-    width: 60%;
+  @include transition;
+  border-radius: 15px;
+  border: 1px solid $gray-light-color;
+  box-shadow: 0 2px 5px rgba(#000000, .2);
+  cursor: pointer;
+  display: flex;
+  margin: 25px auto;
+  width: 65%;
+
+  &:focus,
+  &:hover {
+    @include transition;
+    box-shadow: 0 2px 7px rgba(#000000, .3);
   }
 
   &-image {
+    box-shadow: 5px 0 7px rgba(#000000, .2);
+    display: inline-grid;
     width: 40%;
     
     .image {
-      border-radius: 50%;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
       width: 100%;
     }
   }
