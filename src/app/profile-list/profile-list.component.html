@@ -1,9 +1,13 @@
 <div class="content" fxLayout="column">
   <div class="head-bar">
-    Beca IOS
+    Beca <span class="head-bar-disclaimer">IOS</span>
   </div>
 
-  <p class="text">Olá, {{name}}, esta é uma lista dos novos becários IOS</p>
+  <p class="jumbotron">
+    <!-- <span class="jumbotron-user">Olá, {{name}}!</span> -->
+    <span class="jumbotron-user">Olá Gabriel!</span>
+    <span class="jumbotron-message">Esta é uma lista dos novos becários IOS.</span>
+  </p>
 
   <div class="profile-card" *ngFor="let profile of profiles" (click)="showDetails(profile)">
     <div class="div-image">
@@ -14,3 +18,4 @@
       </div>
     </div>
   </div>
+</div>
