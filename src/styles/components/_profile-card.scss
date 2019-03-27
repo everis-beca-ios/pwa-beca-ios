@@ -1,27 +1,74 @@
+@import '../mixins';
 
 .profile-card {
-  align-items: center;
-  border-bottom: 2px solid teal;
-  display: flex;
-  height: 70px;
-  margin-bottom: 5%;
-  max-width: 400px;
+	@include transition;
+	border-radius: 15px;
+	border: 1px solid $gray-light-color;
+	box-shadow: 0 2px 5px rgba(#000000, .2);
+	cursor: pointer;
+	display: flex;
+	margin: 25px auto;
+	width: 65%;
+
+	&:focus,
+	&:hover {
+		@include transition;
+		box-shadow: 0 2px 7px rgba(#000000, .3);
+	}
+
+	&-image {
+		box-shadow: 5px 0 7px rgba(#000000, .2);
+		display: inline-grid;
+		width: 40%;
+
+		.image {
+			border-top-left-radius: 15px;
+			border-bottom-left-radius: 15px;
+			width: 100%;
+		}
+	}
+
+	&-info {
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+		margin-left: 15px;
+
+		.name {
+			font-size: 1.25rem;
+			font-weight: $font-weight-semibold;
+			padding-bottom: 5px;
+		}
+
+		.description {
+			font-size: 0.875rem;
+		}
+	}
 }
 
-.div-image {
-  display: flex;
-  justify-content: flex-start;
-}
+// .profile-card {
+//   align-items: center;
+//   border-bottom: 2px solid red;
+//   display: flex;
+//   height: 70px;
+//   margin-bottom: 5%;
+//   max-width: 400px;
+// }
 
-.image {
-  border-radius: 10px;
-  height: 50px;
-  width: 50px;
-}
+// .div-image {
+//   display: flex;
+//   justify-content: flex-start;
+// }
 
-.div-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 5%;
-  min-width: 100px;
-}
+// .image {
+//   border-radius: 10px;
+//   height: 50px;
+//   width: 50px;
+// }
+
+// .div-info {
+//   display: flex;
+//   flex-direction: column;
+//   margin-left: 5%;
+//   min-width: 100px;
+// }
