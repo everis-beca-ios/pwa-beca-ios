@@ -1,8 +1,7 @@
-<div style="text-align:center;" class="row">
-  <mat-toolbar color="primary">
-    <span>IOS</span>
-    <span class="example-fill-remaining-space"></span>
-  </mat-toolbar>
+<div style="text-align:center;" class="content" fxLayout="column">
+  <div class="head-bar">
+      Beca IOS
+    </div>
     <div class="container">
       <img
         width="100"
@@ -19,15 +18,9 @@
       </h4>
     </div>
 
-    <div>
-      <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title><h5>Descrição</h5></mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ userData.description }}</p>
-        </mat-card-content>
-      </mat-card>
+    <div class="profile-card">
+        <h5>Descrição</h5>
+        <p>{{ userData.description }}</p>
     </div>
 
     <div class="content" style="margin-top: 16px"></div>
