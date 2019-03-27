@@ -7,9 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile-list.component.scss']
 })
 export class ProfileListComponent implements OnInit {
-
   profiles: any;
-
   constructor(
     private router: Router
   ) {

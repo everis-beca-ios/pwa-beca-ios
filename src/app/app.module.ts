@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileListComponent } from './profile-list/profile-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileListComponent
   ],
   imports: [
     BrowserModule,

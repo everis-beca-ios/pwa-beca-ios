@@ -1,18 +1,16 @@
 <div class="content" fxLayout="column">
-  <mat-toolbar color="primary">
-      Beca IOS
-    </mat-toolbar>
+  <div class="head-bar">
+    Beca IOS
+  </div>
 
-    <p>Olá, Fulano de Tal, esta é uma lista dos novos becários IOS</p>
+  <p class="text">Olá, {{name}}, esta é uma lista dos novos becários IOS</p>
 
-    <div>
-        <div class="profile-card" *ngFor="let profile of profiles" (click)="showDetails(profile)">
-              <div class="div-image">
-                <img class="image" src="{{profile.image}}" alt="Photo of User" style="border-radius: 10%; width: 40%">
-                <div class="div-info">
-                  <span>{{profile.name}}</span>
-                  <span>{{profile.description}}</span>
-                </div>
-              </div>
+  <div class="profile-card" *ngFor="let profile of profiles" (click)="showDetails(profile)">
+    <div class="div-image">
+      <img class="image" src="{{profile.image}}" alt="Photo of User">
+      <div class="div-info">
+        <span>{{profile.name}}</span>
+        <span>{{profile.description}}</span>
+      </div>
     </div>
-</div>
+  </div>
