@@ -1,0 +1,10 @@
+<section>
+  <div class="logoEveris">
+    <img src="https://www.everis.com/sites/all/themes/everis/logo.png" alt="everis">
+  </div>
+  <div class="form" [formGroup]="login" >
+    <input class="inputUser" placeholder="User" type="text" formControlName="id">
+    <input class="inputPass" placeholder="Pass" type="password" formControlName="passwd">
+    <button (click)="isValid()" class="btnLogin">In</button>
+  </div>
+</section>
