@@ -1,0 +1,21 @@
+.profile-card {
+    max-width: 400px;
+    margin-bottom: 5%;
+}
+
+.div-image {
+    display: flex;
+    align-items: flex-start;
+}
+
+.image {
+    height: 70%;
+    width: 70%;
+    margin-top: 5%;
+}
+
+.div-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
