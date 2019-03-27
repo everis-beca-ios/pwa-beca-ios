@@ -5,16 +5,24 @@
 @import '../../styles/components/jumbotron';
 
 .head-bar {
-  align-items: center;
-  background-color: $primary-color;
-  color: $white-color;
-  display: flex;
-  font-size: 1.125rem;
-  letter-spacing: 1px;
-  justify-content: center;
-  padding: 15px 5px;
+	align-items: center;
+	background-color: $secondary-color;
+	color: $white-color;
+	display: flex;
+	font-size: 1.125rem;
+	letter-spacing: 1px;
+	justify-content: center;
+	padding: 15px 5px;
 
-  &-disclaimer {
-    font-weight: $font-weight-semibold;
-  }
+	&::before {
+		content: '<';
+	}
+
+	&::after {
+		content: ' />';
+	}
+
+	&-disclaimer {
+		font-weight: $font-weight-semibold;
+	}
 }
