@@ -2,73 +2,56 @@
 
 .profile-card {
 	@include transition;
-	border-radius: 15px;
-	border: 1px solid $gray-light-color;
-	box-shadow: 0 2px 5px rgba(#000000, .2);
+	background-color: $primary-color;
+	border-radius: 8px;
 	cursor: pointer;
 	display: flex;
-	margin: 25px auto;
-	width: 65%;
+	flex-basis: 100%;
+	margin-bottom: 20px;
 
 	&:focus,
 	&:hover {
-		@include transition;
-		box-shadow: 0 2px 7px rgba(#000000, .3);
+		background-color: $secondary-color;
+	}
+
+	&-list {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 auto;
+		padding: 20px 0;
+		width: 90%;
 	}
 
 	&-image {
-		box-shadow: 5px 0 7px rgba(#000000, .2);
+		// box-shadow: 5px 0 7px rgba(#000000, .2);
+		border-right: 2px solid $white-color;
 		display: inline-grid;
-		width: 40%;
+		width: 100px;
 
 		.image {
-			border-top-left-radius: 15px;
-			border-bottom-left-radius: 15px;
-			width: 100%;
+			border-top-left-radius: 8px;
+			border-bottom-left-radius: 8px;
+			width: 100px;
 		}
 	}
 
 	&-info {
 		align-self: center;
+		color: $white-color;
 		display: flex;
 		flex-direction: column;
 		margin-left: 15px;
 
 		.name {
-			font-size: 1.25rem;
+			font-size: 1rem;
 			font-weight: $font-weight-semibold;
 			padding-bottom: 5px;
 		}
 
 		.description {
-			font-size: 0.875rem;
+			font-size: .75rem;
 		}
 	}
 }
-
-// .profile-card {
-//   align-items: center;
-//   border-bottom: 2px solid red;
-//   display: flex;
-//   height: 70px;
-//   margin-bottom: 5%;
-//   max-width: 400px;
-// }
-
-// .div-image {
-//   display: flex;
-//   justify-content: flex-start;
-// }
-
-// .image {
-//   border-radius: 10px;
-//   height: 50px;
-//   width: 50px;
-// }
-
-// .div-info {
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: 5%;
-//   min-width: 100px;
-// }
