@@ -18,30 +18,3 @@
     font-weight: $font-weight-semibold;
   }
 }
-
-.profile-card {
-  align-items: center;
-  border-bottom: 2px solid teal;
-  display: flex;
-  height: 70px;
-  margin-bottom: 5%;
-  max-width: 400px;
-}
-
-.div-image {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.image {
-  border-radius: 10px;
-  height: 50px;
-  width: 50px;
-}
-
-.div-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 5%;
-  min-width: 100px;
-}
