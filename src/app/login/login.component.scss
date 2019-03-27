@@ -5,6 +5,17 @@
 // Components
 @import '../../styles/components/head-bar';
 
+.head-login {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 10px 5px;
+
+	&-brand {
+		max-width: 200px;
+	}
+}
+
 .form {
 	align-items: center;
 	display: flex;
@@ -12,7 +23,7 @@
 	justify-content: center;
 	padding: 20px;
 
-	input {
+	&-control {
 		@include transition;
 		border: 1px solid $gray-light-color;
 		border-radius: 4px;

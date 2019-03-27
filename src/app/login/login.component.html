@@ -1,11 +1,11 @@
 <section>
-	<div class="head-bar">
-		Beca <span class="head-bar-disclaimer">IOS</span>
+	<div class="head-login">
+		<img class="head-login-brand" src="https://www.everis.com/sites/all/themes/everis/logo.png" alt="Everis - an NTT Data Company">
 	</div>
 
 	<div class="form" [formGroup]="login">
-		<input class="inputUser" placeholder="Usuário" type="text" formControlName="id">
-		<input class="inputPass" placeholder="Senha" type="password" formControlName="passwd">
+		<input class="form-control inputUser" placeholder="Usuário" type="text" formControlName="id">
+		<input class="form-control inputPass" placeholder="Senha" type="password" formControlName="passwd">
 		<button class="button button-default" (click)="isValid()">Login</button>
 	</div>
 </section>
