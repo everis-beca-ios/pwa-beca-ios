@@ -1,0 +1,57 @@
+@import '../mixins';
+
+.profile-card {
+	@include transition;
+	background-color: $primary-color;
+	border-radius: 8px;
+	cursor: pointer;
+	display: flex;
+	flex-basis: 100%;
+	margin-bottom: 20px;
+
+	&:focus,
+	&:hover {
+		background-color: $secondary-color;
+	}
+
+	&-list {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 auto;
+		padding: 20px 0;
+		width: 90%;
+	}
+
+	&-image {
+		// box-shadow: 5px 0 7px rgba(#000000, .2);
+		border-right: 2px solid $white-color;
+		display: inline-grid;
+		width: 100px;
+
+		.image {
+			border-top-left-radius: 8px;
+			border-bottom-left-radius: 8px;
+			width: 100px;
+		}
+	}
+
+	&-info {
+		align-self: center;
+		color: $white-color;
+		display: flex;
+		flex-direction: column;
+		margin-left: 15px;
+
+		.name {
+			font-size: 1rem;
+			font-weight: $font-weight-semibold;
+			padding-bottom: 5px;
+		}
+
+		.description {
+			font-size: .75rem;
+		}
+	}
+}

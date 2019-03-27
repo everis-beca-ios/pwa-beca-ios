@@ -1,10 +1,11 @@
 <section>
-  <div class="logoEveris">
-    <img src="https://www.everis.com/sites/all/themes/everis/logo.png" alt="everis">
-  </div>
-  <div class="form" [formGroup]="login" >
-    <input class="inputUser" placeholder="User" type="text" formControlName="id">
-    <input class="inputPass" placeholder="Pass" type="password" formControlName="passwd">
-    <button (click)="isValid()" class="btnLogin">In</button>
-  </div>
+	<div class="head-login">
+		<img class="head-login-brand" src="https://www.everis.com/sites/all/themes/everis/logo.png" alt="Everis - an NTT Data Company">
+	</div>
+
+	<div class="form" [formGroup]="login">
+		<input class="form-control inputUser" placeholder="Usuário" type="text" formControlName="id">
+		<input class="form-control inputPass" placeholder="Senha" type="password" formControlName="passwd">
+		<button class="button button-default" (click)="isValid()">Login</button>
+	</div>
 </section>

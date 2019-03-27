@@ -1,0 +1,24 @@
+.jumbotron {
+	align-items: center;
+	background-color: $gray-light-color;
+	color: $primary-color;
+	display: flex;
+	flex-wrap: wrap;
+	line-height: 1.5;
+	margin: 0;
+	padding: 30px 5px;
+	justify-content: center;
+	text-align: center;
+
+	&-user {
+		color: $secondary-color;
+		flex-basis: 100%;
+		font-size: 1rem;
+
+		&-name { font-weight: $font-weight-semibold; }
+	}
+
+	&-message {
+		font-size: .8125rem;
+	}
+}
