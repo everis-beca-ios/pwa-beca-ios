@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -10,9 +11,13 @@ export class DetailsComponent implements OnInit {
   name:string = "John Lennon"
   description:string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin hendrerit pellentesque risus, convallis gravida risus hendrerit at. Integer magna sapien, tristique ac consectetur sed, vestibulum iaculis quam. Praesent vestibulum varius posuere. Cras purus orci, tempus vitae finibus sit amet, pharetra non diam. In hac habitasse platea dictumst. Fusce quis mi gravida ligula elementum tincidunt quis nec mi. Mauris vehicula ante eros, sed sodales nisi tincidunt vitae "
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  gotToProfileList() {
+    this.router.navigate(["profile-list"])
   }
 
 }
