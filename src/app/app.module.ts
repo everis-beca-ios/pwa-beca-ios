@@ -4,18 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './details/details.component';
-import { MatToolbarModule } from '@angular/material';
-import {MatCardModule} from '@angular/material/card';
+import { ProfileListComponent } from './profile-list/profile-list.component';
+
+import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailsComponent
+    DetailsComponent,
+    ProfileListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    FlexLayoutModule,
     MatCardModule
   ],
   providers: [],
