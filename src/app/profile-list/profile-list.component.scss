@@ -1,4 +1,5 @@
 // Base
+@import '../../styles/mixins';
 @import '../../styles/variables';
 
 // Components
@@ -6,16 +7,41 @@
 @import '../../styles/components/profile-card';
 
 .head-bar {
-  align-items: center;
-  background-color: $primary-color;
-  color: $white-color;
-  display: flex;
-  font-size: 1.125rem;
-  letter-spacing: 1px;
-  justify-content: center;
-  padding: 15px 5px;
+	align-items: center;
+	background-color: $secondary-color;
+	color: $white-color;
+	display: flex;
+	font-size: 1.125rem;
+	letter-spacing: 1px;
+	justify-content: center;
+	padding: 15px 5px;
 
-  &-disclaimer {
-    font-weight: $font-weight-semibold;
-  }
+	&::before,
+	&::after {
+		@include transition;
+	}
+
+	&::before {
+		animation: closedTags .5s infinite alternate;
+		content: '<';
+	}
+
+	&::after {
+		animation: closedTagsInverted .5s infinite alternate;
+		content: ' />';
+	}
+
+	&-disclaimer {
+		font-weight: $font-weight-semibold;
+	}
+}
+
+@keyframes closedTags {
+	from { transform: translateX(0); }
+	to { transform: translateX(-5px); }
+}
+
+@keyframes closedTagsInverted {
+	from { transform: translateX(0); }
+	to { transform: translateX(5px); }
 }

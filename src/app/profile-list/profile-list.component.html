@@ -9,11 +9,10 @@
 		<span class="jumbotron-message">Esta é uma lista dos novos becários IOS.</span>
 	</p>
 
-
 	<div class="profile-card" *ngFor="let profile of profiles" (click)="showDetails(profile)">
 		<div class="profile-card-content">
 			<div class="profile-card-image">
-				<img class="image" src="{{profile.image}}" alt="Photo of User">
+				<img class="image" src="{{profile.picture ? profile.picture : imageDefault}}" alt="{{profile.name}}">
 			</div>
 			<div class="profile-card-info">
 				<span class="name">{{profile.name}}</span>
