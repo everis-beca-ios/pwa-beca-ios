@@ -1,21 +1,24 @@
 <div class="content" fxLayout="column">
-  <div class="head-bar">
-    Beca <span class="head-bar-disclaimer">IOS</span>
-  </div>
+	<div class="head-bar">
+		Beca <span class="head-bar-disclaimer">IOS</span>
+	</div>
 
-  <p class="jumbotron">
-    <!-- <span class="jumbotron-user">Olá, {{name}}!</span> -->
-    <span class="jumbotron-user">Olá Gabriel!</span>
-    <span class="jumbotron-message">Esta é uma lista dos novos becários IOS.</span>
-  </p>
+	<p class="jumbotron">
+		<!-- <span class="jumbotron-user">Olá, {{name}}!</span> -->
+		<span class="jumbotron-user">Olá Gabriel!</span>
+		<span class="jumbotron-message">Esta é uma lista dos novos becários IOS.</span>
+	</p>
 
-  <div class="profile-card" *ngFor="let profile of profiles" (click)="showDetails(profile)">
-    <div class="div-image">
-      <img class="image" src="{{profile.image}}" alt="Photo of User">
-      <div class="div-info">
-        <span>{{profile.name}}</span>
-        <span>{{profile.description}}</span>
-      </div>
-    </div>
-  </div>
+
+	<div class="profile-card" *ngFor="let profile of profiles" (click)="showDetails(profile)">
+		<div class="profile-card-content">
+			<div class="profile-card-image">
+				<img class="image" src="{{profile.image}}" alt="Photo of User">
+			</div>
+			<div class="profile-card-info">
+				<span class="name">{{profile.name}}</span>
+				<span class="description">{{profile.description}}</span>
+			</div>
+		</div>
+	</div>
 </div>
