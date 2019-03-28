@@ -8,15 +8,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 export class MenuComponent implements OnInit {
 	@Input() userProps: object;
-	@Input() openMenu: string;
+	@Input() openMenu:boolean
+	@Output() close = new EventEmitter()
+
 
 	constructor() {}
 
 	ngOnInit() {}
-
 	closeMenu() {
-		this.openMenu = '';
-
-		console.log('this.openMenu', this.openMenu);
+		this.openMenu = false;
+		this.close.emit()
 	}
 }
