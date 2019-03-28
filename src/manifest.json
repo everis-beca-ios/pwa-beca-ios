@@ -1,11 +1,11 @@
 {
-  "name": "pwa-beca-ios",
-  "short_name": "pwa-beca-ios",
+  "name": "PWA BECAiOS",
+  "short_name": "pwa beca ios",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#FFF",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/profile-list",
+  "start_url": "/profile-list",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
