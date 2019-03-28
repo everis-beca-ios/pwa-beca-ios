@@ -9,6 +9,16 @@
 	flex-basis: 100%;
 	margin-bottom: 20px;
 
+	@media (min-width: 600px) {
+		flex-basis: calc(50% - 20px);
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	@media (min-width: 992px) {
+		flex-basis: calc(33.3333% - 20px);
+	}
+
 	&:focus,
 	&:hover {
 		background-color: $secondary-color;
@@ -22,10 +32,13 @@
 		margin: 0 auto;
 		padding: 20px 0;
 		width: 90%;
+
+		@media (min-width: 600px) {
+			justify-content: space-between;
+		}
 	}
 
 	&-image {
-		// box-shadow: 5px 0 7px rgba(#000000, .2);
 		border-right: 2px solid $white-color;
 		display: inline-grid;
 		width: 100px;
