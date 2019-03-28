@@ -1,11 +1,15 @@
 <section>
 	<div class="head-login">
-		<img class="head-login-brand" src="https://www.everis.com/sites/all/themes/everis/logo.png" alt="Everis - an NTT Data Company">
+		<img class="head-login-brand" src="https://www.everis.com/sites/all/themes/everis/logo.png"
+			alt="Everis - an NTT Data Company">
 	</div>
 
-	<div class="form" [formGroup]="login">
-		<input class="form-control inputUser" placeholder="Usuário" type="text" formControlName="id">
-		<input class="form-control inputPass" placeholder="Senha" type="password" formControlName="passwd">
-		<button class="button button-default" (click)="isValid()">Login</button>
+	<div class="form" [formGroup]="loginFrom">
+		<input class="form-control inputUser" [ngClass]="{inValid: !userId }" placeholder="Usuário" type="text"
+			formControlName="id">
+		<input class="form-control inputPass" [ngClass]="{inValid: !userPass }" placeholder="Senha" type="password"
+			formControlName="passwd">
+		<button class="button button-default" [disabled]="!userId && !userPass" (click)="isValid()">Login</button>
+		<span class="textError" *ngIf="formIsvalid == false && res == null">Usuario/Senha invalido</span>
 	</div>
 </section>
