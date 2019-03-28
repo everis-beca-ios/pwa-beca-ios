@@ -16,7 +16,8 @@ import { HttpClient } from "@angular/common/http";
 
 export class ProfileListComponent implements OnInit {
 	profiles: any;
-	name: string;
+	userProps: object;
+	image: string;
 	url: string = "https://beca-sn-pwa-instantapps-api.herokuapp.com/users";
 	imageDefault: string = "https://cdn3.vectorstock.com/i/1000x1000/38/42/hacker-character-avatar-icon-vector-11573842.jpg";
 
@@ -40,7 +41,9 @@ export class ProfileListComponent implements OnInit {
 	 * @memberof ProfileListComponent
 	 */
 	getProfileData() {
-		this.name = localStorage.getItem("username");
+		const userProps = JSON.parse(localStorage.getItem("userLogged"));
+
+		this.userProps = userProps;
 	}
 
 	/**

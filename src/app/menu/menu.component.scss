@@ -1,3 +1,7 @@
+// Base
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
 .menu {
 	@include transition($timing: .4s);
 	background-color: $white-color;

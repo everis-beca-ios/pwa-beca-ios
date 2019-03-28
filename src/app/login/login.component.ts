@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 		formData.append("passwd", this.login.controls.passwd.value);
 
 		this.http.post("https://beca-sn-pwa-instantapps-api.herokuapp.com/login", formData).subscribe(res => {
-			localStorage.setItem("username", res["logado"]["name"]);
+			localStorage.setItem("userLogged", JSON.stringify(res["logado"]));
 			localStorage.setItem("isLoggedIn", "true");
 			this.router.navigate(["profile-list"]);
 		}, err => console.log('error', err));

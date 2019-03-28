@@ -1,13 +1,14 @@
 <div class="content" fxLayout="column">
 	<div class="head-bar">
 		Beca <span class="head-bar-disclaimer">iOS</span>
+
 		<span class="head-bar-user">
-			<img class="image" src="https://avatars1.githubusercontent.com/u/6052056?s=460&amp;v=4" alt="">
+			<img class="image" src="{{userProps.picture}}" alt="{{userProps.name}}">
 		</span>
 	</div>
 
 	<p class="jumbotron">
-		<span class="jumbotron-user">Olá {{name}}!</span>
+		<span class="jumbotron-user">Olá {{userProps.name}}!</span>
 		<span class="jumbotron-message">Esta é uma lista dos novos becários IOS.</span>
 	</p>
 
@@ -23,15 +24,5 @@
 		</div>
 	</div>
 
-	<div class="menu">
-		<div class="menu-user">
-			<img class="image" src="https://avatars1.githubusercontent.com/u/6052056?s=460&amp;v=4" alt="">
-			<div class="menu-information">
-				<span class="name">Gabriel Henrique</span>
-			</div>
-		</div>
-		<div class="menu-list">
-			<a href="#" class="menu-link">Sair</a>
-		</div>
-	</div>
+	<app-menu [userProps]="userProps"></app-menu>
 </div>

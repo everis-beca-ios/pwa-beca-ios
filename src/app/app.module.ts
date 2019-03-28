@@ -8,13 +8,15 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ProfileListComponent } from "./profile-list/profile-list.component";
 import { AuthGuard } from "./auth.guard";
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		DetailsComponent,
 		LoginComponent,
-		ProfileListComponent
+		ProfileListComponent,
+		MenuComponent
 	],
 	imports: [
 		BrowserModule,
