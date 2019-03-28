@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           else {
             localStorage.setItem('username', response['logado']['name']);
             localStorage.setItem('isLoggedIn', 'true');
-            this.router.navigate(['profile-list']);
+            this.router.navigate(['profiles']);
           }
         }
       )
