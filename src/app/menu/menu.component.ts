@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Router } from '@angular/router';
 
 @Component({
 	selector: "app-menu",
@@ -12,11 +13,29 @@ export class MenuComponent implements OnInit {
 	@Output() close = new EventEmitter()
 
 
-	constructor() {}
+	constructor(
+		private router: Router
+	) { }
 
 	ngOnInit() {}
+
+
+	/**
+	 * Close menu clicking inside backdrop
+	 * @memberof MenuComponent
+	 */
 	closeMenu() {
 		this.openMenu = false;
-		this.close.emit()
+		this.close.emit();
+	}
+
+
+	/**
+	 * Clear all data inside local storage and redirect the user to login route
+	 * @memberof MenuComponent
+	 */
+	logoutUser() {
+		localStorage.clear();
+		this.router.navigate(["login"]);
 	}
 }
