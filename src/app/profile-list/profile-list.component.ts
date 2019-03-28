@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./profile-list.component.scss']
 })
 export class ProfileListComponent implements OnInit {
+  public onlineOffline: boolean = navigator.onLine;
+
   profiles: any;
   name: string;
   url: string = 'https://beca-sn-pwa-instantapps-api.herokuapp.com/users';
@@ -30,12 +32,18 @@ export class ProfileListComponent implements OnInit {
 
   ngOnInit() {
     this.getProfileData();
-    this.getProfileList();
+    if(this.onlineOffline){
+      this.getProfileList();
+    }
+    console.log(this.onlineOffline)
   }
 
   getProfileData(){
     this.activateRouter.params.subscribe(params => {
       this.name = params.name;
+      caches.open('pwa-cache').then(function(cache) {
+        cache.add('https://beca-sn-pwa-instantapps-api.herokuapp.com/users')
+      })
     });
   }
 
