@@ -1,0 +1,39 @@
+.menu {
+    background: $primary-color;
+    bottom: 0;
+    box-shadow: 5px 0px 10px 0px rgba(#000 ,.75);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 70%;
+
+    &-user {
+        align-items: center;
+        border-bottom: 1px solid $white-color;
+        display: flex;
+        padding: 10px 15px;
+
+        .image {
+            border-radius: 50%;
+            border: 2px solid $white-color;
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+    &-information {
+        color: $white-color;
+        font-size: 1.125rem;
+        font-weight: $font-weight-semibold;
+        padding-left: 10px;
+    }
+
+    &-link {
+        border-bottom: 1px solid $white-color;
+        color: $white-color;
+        display: block;
+        font-size: .875rem;
+        padding: 15px;
+        text-decoration: none;
+    }
+}
