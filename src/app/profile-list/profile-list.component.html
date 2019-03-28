@@ -1,10 +1,12 @@
 <div class="content" fxLayout="column">
+	<app-menu [userProps]="userProps"></app-menu>
+
 	<div class="head-bar">
 		Beca <span class="head-bar-disclaimer">iOS</span>
 
-		<span class="head-bar-user">
+		<div class="head-bar-user">
 			<img class="image" src="{{userProps.picture}}" alt="{{userProps.name}}">
-		</span>
+		</div>
 	</div>
 
 	<p class="jumbotron">
@@ -23,6 +25,4 @@
 			</div>
 		</div>
 	</div>
-
-	<app-menu [userProps]="userProps"></app-menu>
 </div>
