@@ -8,8 +8,6 @@ import { ProfileListService } from './profile-list.service';
   styleUrls: ['./profile-list.component.scss']
 })
 export class ProfileListComponent implements OnInit {
-  public onlineOffline: boolean = navigator.onLine;
-
   profiles: any;
   name: string;
   imageDefault: string = 'https://cdn3.vectorstock.com/i/1000x1000/38/42/hacker-character-avatar-icon-vector-11573842.jpg';
@@ -21,10 +19,7 @@ export class ProfileListComponent implements OnInit {
 
   ngOnInit() {
     this.getProfileData();
-    if(this.onlineOffline){
-      this.getProfileList();
-    }
-    console.log(this.onlineOffline)
+    this.getProfileList();
   }
 
   getProfileData(){
