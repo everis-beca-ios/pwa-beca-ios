@@ -35,17 +35,16 @@ export class LoginComponent implements OnInit {
     const formData = new FormData()
     if (this.loginFrom.invalid) { this.formIsvalid = false }
     else {
-      this.formIsvalid = true
       formData.append('id', this.loginFrom.controls.id.value); formData.append('passwd', this.loginFrom.controls.passwd.value);
       this.http.post('https://beca-sn-pwa-instantapps-api.herokuapp.com/login', formData).subscribe(
-        res => {
-          if (res == null) { this.formIsvalid = false }
+        response => {
+          if (response == null) { this.formIsvalid = false }
           else {
-            localStorage.setItem('username', res['logado']['name']);
+            localStorage.setItem('username', response['logado']['name']);
             localStorage.setItem('isLoggedIn', 'true');
-            this.router.navigate(['profile-list']);
+            this.router.navigate(['profiles']);
           }
-        },
+        }
       )
     }
   }

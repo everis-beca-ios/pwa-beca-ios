@@ -26,7 +26,13 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
+<<<<<<< HEAD
   providers: [AuthGuard],
+=======
+  providers: [
+    AuthGuard
+  ],
+>>>>>>> 26f0405e80d38590d26933172830b537e71cc32b
   bootstrap: [AppComponent]
 })
 export class AppModule { }

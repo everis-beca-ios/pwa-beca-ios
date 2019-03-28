@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   }
 
   gotToProfileList() {
-    this.router.navigate(["profile-list"])
+    this.router.navigate([""])
   }
 
 }
