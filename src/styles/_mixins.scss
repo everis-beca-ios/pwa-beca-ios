@@ -2,6 +2,41 @@
 	transition: $property $effect $timing;
 }
 
+
+@mixin spinner(
+	$color: #ff0000,
+	$diameter: 25px,
+	$stroke: 3px,
+	$background-color: #eee,
+	$sides: 2
+) {
+	animation: rotation .7s linear infinite;
+	border: $stroke solid $background-color;
+	border-radius: 100%;
+	border-top-color: $color;
+	display: inline-block;
+	font-size: $diameter;
+	height: 1em;
+	left: 0;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	right: 0;
+	width: 1em!important;
+
+	@if $sides >= 2 {
+		border-right-color: $color;
+	}
+	@if $sides >= 3 {
+		border-bottom-color: $color;
+	}
+}
+
+@keyframes rotation {
+	from { transform: rotate(0); }
+	to { transform: rotate(360deg); }
+}
+
 @mixin loading() {
 	&:after {
 		background-color: rgba(0, 0, 0, .6);
