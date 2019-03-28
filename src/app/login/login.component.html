@@ -10,6 +10,6 @@
 		<input class="form-control inputPass" [ngClass]="{inValid: !userPass }" placeholder="Senha" type="password"
 			formControlName="passwd">
 		<button class="button button-default" [disabled]="!userId && !userPass" (click)="isValid()">Login</button>
-		<span class="textError" *ngIf="formIsvalid == false && res == null">Usuario/Senha invalido</span>
+		<span class="textError" *ngIf="formIsvalid == false">Usuario/Senha invalido</span>
 	</div>
 </section>
