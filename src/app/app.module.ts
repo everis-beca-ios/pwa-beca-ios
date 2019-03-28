@@ -10,13 +10,15 @@ import { ProfileListComponent } from "./profile-list/profile-list.component";
 import { AuthGuard } from "./auth.guard";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		DetailsComponent,
 		LoginComponent,
-		ProfileListComponent
+		ProfileListComponent,
+		MenuComponent
 	],
 	imports: [
 		BrowserModule,
