@@ -4,19 +4,37 @@
 
 .menu {
 	@include transition($timing: .4s);
-	background-color: $white-color;
-	bottom: 0;
-	box-shadow: 5px 0px 10px 0px rgba(#000 ,.75);
-	left: 0;
-	max-width: 320px;
-	position: fixed;
-	top: 0;
-	transform: translateX(-200%);
-	width: 80%;
-	will-change: transform;
 
 	&.is-open {
-		transform: translateY(0);
+		.menu-content {
+			transform: translateY(0);
+		}
+
+		& + .menu-backdrop {
+			background-color: rgba(#000, .75);
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+		}
+	}
+
+	&-content {
+		@include transition($timing: .4s);
+		background-color: $white-color;
+		bottom: 0;
+		box-shadow: 5px 0px 10px 0px rgba(#000 ,.75);
+		left: 0;
+		max-width: 320px;
+		position: fixed;
+		top: 0;
+		transform: translateX(-200%);
+		width: 80%;
+		will-change: transform;
+		z-index: 99;
 	}
 
 	&-user {

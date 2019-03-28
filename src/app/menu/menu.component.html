@@ -1,15 +1,19 @@
-<div class="menu">
-	<div class="menu-user">
-		<img class="image" src="{{userProps.picture}}" alt="{{userProps.name}}">
+<div class="menu {{openMenu}}">
+	<div class="menu-content">
+		<div class="menu-user">
+			<img class="image" src="{{userProps.picture}}" alt="{{userProps.name}}">
 
-		<div class="menu-information">
-			<span class="name">{{userProps.name}}</span>
-			<span class="identifier">@{{userProps.id}}</span>
+			<div class="menu-information">
+				<span class="name">{{userProps.name}}</span>
+				<span class="identifier">@{{userProps.id}}</span>
+			</div>
+		</div>
+
+		<div class="menu-list">
+			<a class="menu-link" [routerLink]="['/profile-list']">Funcionários</a>
+			<a class="menu-link" href="#">Sair</a>
 		</div>
 	</div>
-
-	<div class="menu-list">
-		<a class="menu-link" [routerLink]="['/profile-list']">Funcionários</a>
-		<a class="menu-link" href="#">Sair</a>
-	</div>
 </div>
+
+<div class="menu-backdrop" (click)="closeMenu()"></div>

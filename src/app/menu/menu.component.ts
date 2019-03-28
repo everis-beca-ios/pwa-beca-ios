@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
 	selector: "app-menu",
@@ -8,8 +8,15 @@ import { Component, OnInit, Input } from "@angular/core";
 
 export class MenuComponent implements OnInit {
 	@Input() userProps: object;
+	@Input() openMenu: string;
 
 	constructor() {}
 
 	ngOnInit() {}
+
+	closeMenu() {
+		this.openMenu = '';
+
+		console.log('this.openMenu', this.openMenu);
+	}
 }

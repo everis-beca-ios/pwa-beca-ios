@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 
@@ -17,6 +17,7 @@ import { HttpClient } from "@angular/common/http";
 export class ProfileListComponent implements OnInit {
 	profiles: any;
 	userProps: object;
+	menuClass: string;
 	image: string;
 	url: string = "https://beca-sn-pwa-instantapps-api.herokuapp.com/users";
 	imageDefault: string = "https://cdn3.vectorstock.com/i/1000x1000/38/42/hacker-character-avatar-icon-vector-11573842.jpg";
@@ -61,5 +62,16 @@ export class ProfileListComponent implements OnInit {
 	 */
 	showDetails(profile: any) {
 		this.router.navigate(["details", profile]);
+	}
+
+
+	/**
+	 * Attach open class inside menu component
+	 * @memberof ProfileListComponent
+	 */
+	toggleMenuView() {
+		this.menuClass = 'is-open';
+
+		console.log('this.menuClass', this.menuClass);
 	}
 }

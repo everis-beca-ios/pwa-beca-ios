@@ -1,10 +1,8 @@
 <div class="content" fxLayout="column">
-	<app-menu [userProps]="userProps"></app-menu>
-
 	<div class="head-bar">
 		Beca <span class="head-bar-disclaimer">iOS</span>
 
-		<div class="head-bar-user">
+		<div class="head-bar-user" (click)="toggleMenuView()">
 			<img class="image" src="{{userProps.picture}}" alt="{{userProps.name}}">
 		</div>
 	</div>
@@ -25,4 +23,6 @@
 			</div>
 		</div>
 	</div>
+
+	<app-menu [userProps]="userProps" [openMenu]="menuClass"></app-menu>
 </div>
