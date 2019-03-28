@@ -1,3 +1,31 @@
 @mixin transition($property: all, $effect: ease-in, $timing: .25s) {
 	transition: $property $effect $timing;
 }
+
+@mixin loading() {
+	&:after {
+		background-color: rgba(0, 0, 0, .6);
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 9;
+	}
+
+	&:before {
+		@include spinner ($secondary-color, 80px, 9px, transparent, 3);
+		border-radius: 100%;
+		content: '';
+		display: block;
+		height: 1em;
+		left: calc(50% - 40px);
+		position: fixed;
+		right: inherit;
+		top: calc(50% - 40px);
+		width: 1em!important;
+		z-index: 99;
+	}
+}

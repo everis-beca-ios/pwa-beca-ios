@@ -1,10 +1,14 @@
 <div class="content" fxLayout="column">
 	<div class="head-bar">
 		Beca <span class="head-bar-disclaimer">iOS</span>
+
+		<div class="head-bar-user" (click)="toggleMenuView()">
+			<img class="image" src="{{userProps.picture}}" alt="{{userProps.name}}">
+		</div>
 	</div>
 
 	<p class="jumbotron">
-		<span class="jumbotron-user">Olá {{name}}!</span>
+		<span class="jumbotron-user">Olá {{userProps.name}}!</span>
 		<span class="jumbotron-message">Esta é uma lista dos novos becários IOS.</span>
 	</p>
 
@@ -19,4 +23,6 @@
 			</div>
 		</div>
 	</div>
+
+	<app-menu [userProps]="userProps" [openMenu]="menuClass" (close)="feedback($event)"></app-menu>
 </div>

@@ -1,43 +1,45 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import {map } from "rxjs/operators";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: "root"
 })
 export class ProfileListService {
+	url: string = `${environment.baseUrl}/users`;
 
-  url: string = `${environment.baseUrl}/users`;
+	constructor(private _httpclient: HttpClient) {}
 
-  constructor(
-    private _httpclient: HttpClient
-  ) { }
+	getProfileData() {
+		const userData = JSON.parse(localStorage.getItem("userProps"));
 
-  getProfileData(){    
-    return localStorage.getItem('username');
-  }
-  
-  getProfileList() {
-    return navigator.onLine ? this.getProfileListApi() : this.getStorageData();
-  }
+		return userData;
+	}
 
-  getProfileListApi() {
-    return this._httpclient.get(this.url)
-    .pipe(map(data => {
-      this.saveData(data);
-      return data;
-    })).toPromise();
-    
-  }
+	getProfileList() {
+		return navigator.onLine
+			? this.getProfileListApi()
+			: this.getStorageData();
+	}
 
-  getStorageData() {
-    return JSON.parse(localStorage.getItem('profile-list'));
-  }
+	getProfileListApi() {
+		return this._httpclient
+			.get(this.url)
+			.pipe(
+				map(data => {
+					this.saveData(data);
+					return data;
+				})
+			)
+			.toPromise();
+	}
 
+	getStorageData() {
+		return JSON.parse(localStorage.getItem("profile-list"));
+	}
 
-  saveData(data: any) {
-    localStorage.setItem('profile-list', JSON.stringify(data));
-  }
-
+	saveData(data: any) {
+		localStorage.setItem("profile-list", JSON.stringify(data));
+	}
 }

@@ -14,8 +14,11 @@
 		color: $secondary-color;
 		flex-basis: 100%;
 		font-size: 1rem;
+		font-weight: $font-weight-semibold;
 
-		&-name { font-weight: $font-weight-semibold; }
+		@media (min-width: 600px) {
+			font-size: 1.25rem;
+		}
 	}
 
 	&-message {
