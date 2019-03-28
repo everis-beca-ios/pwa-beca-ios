@@ -16,6 +16,15 @@
 	}
 }
 
+.inValid{
+	border-color: red !important;
+}
+
+.textError{
+	color: red !important;
+	margin-top: 20px;
+}
+
 .form {
 	align-items: center;
 	display: flex;

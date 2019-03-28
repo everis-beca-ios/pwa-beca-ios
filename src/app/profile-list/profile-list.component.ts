@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
-import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProfileListService } from './profile-list.service';
 
 /**
  * Render a list of users fetching an API that returns an array of objects
@@ -13,19 +13,16 @@ import { HttpClient } from "@angular/common/http";
 	templateUrl: "./profile-list.component.html",
 	styleUrls: ["./profile-list.component.scss"]
 })
+
 export class ProfileListComponent implements OnInit {
-	profiles: any;
-	userProps: object;
+	userProps: any;
 	menuClass: boolean = false;
-	image: string;
-	url: string = "https://beca-sn-pwa-instantapps-api.herokuapp.com/users";
-	imageDefault: string =
-		"https://cdn3.vectorstock.com/i/1000x1000/38/42/hacker-character-avatar-icon-vector-11573842.jpg";
+	profiles: any;
+	imageDefault: string = 'https://cdn3.vectorstock.com/i/1000x1000/38/42/hacker-character-avatar-icon-vector-11573842.jpg';
 
 	constructor(
-		private router: Router,
-		private activateRouter: ActivatedRoute,
-		private httclient: HttpClient
+		private _router: Router,
+		private _profileListService: ProfileListService
 	) {}
 
 	/**
@@ -42,19 +39,17 @@ export class ProfileListComponent implements OnInit {
 	 * @memberof ProfileListComponent
 	 */
 	getProfileData() {
-		const userProps = JSON.parse(localStorage.getItem("userLogged"));
-
-		this.userProps = userProps;
+		this.userProps = this._profileListService.getProfileData();
 	}
 
 	/**
 	 * Consume profiles API route and fetch inside profiles attribute of this component
 	 * @memberof ProfileListComponent
 	 */
-	getProfileList() {
-		this.httclient
-			.get(this.url)
-			.subscribe(response => (this.profiles = response));
+	async getProfileList() {
+		this.profiles = await this._profileListService.getProfileList();
+
+		console.log(this.profiles);
 	}
 
 	/**
@@ -63,7 +58,7 @@ export class ProfileListComponent implements OnInit {
 	 * @memberof ProfileListComponent
 	 */
 	showDetails(profile: any) {
-		this.router.navigate(["details", profile]);
+		this._router.navigate(['details', profile]);
 	}
 
 	/**

@@ -12,13 +12,11 @@ export class MenuComponent implements OnInit {
 	@Input() openMenu:boolean
 	@Output() close = new EventEmitter()
 
-
 	constructor(
 		private router: Router
 	) { }
 
 	ngOnInit() {}
-
 
 	/**
 	 * Close menu clicking inside backdrop
@@ -28,7 +26,6 @@ export class MenuComponent implements OnInit {
 		this.openMenu = false;
 		this.close.emit();
 	}
-
 
 	/**
 	 * Clear all data inside local storage and redirect the user to login route
