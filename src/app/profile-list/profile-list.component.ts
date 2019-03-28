@@ -11,7 +11,6 @@ export class ProfileListComponent implements OnInit {
   profiles: any;
   name: string;
   imageDefault: string = 'https://cdn3.vectorstock.com/i/1000x1000/38/42/hacker-character-avatar-icon-vector-11573842.jpg';
-  activateRouter: any;
   constructor(
     private _router: Router, 
     private _profileListService: ProfileListService
@@ -21,14 +20,9 @@ export class ProfileListComponent implements OnInit {
     this.getProfileData();
     this.getProfileList();
   }
-
-  getProfileData(){
-    this.activateRouter.params.subscribe(params => {
-      this.name = params.name;
-      caches.open('pwa-cache').then(function(cache) {
-        cache.add('https://beca-sn-pwa-instantapps-api.herokuapp.com/users')
-      })
-    });
+  
+  getProfileData() {
+    this.name = this._profileListService.getProfileData();
   }
 
   async getProfileList() {
