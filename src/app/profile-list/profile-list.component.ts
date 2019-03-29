@@ -48,8 +48,6 @@ export class ProfileListComponent implements OnInit {
 	 */
 	async getProfileList() {
 		this.profiles = await this._profileListService.getProfileList();
-
-		console.log(this.profiles);
 	}
 
 	/**
