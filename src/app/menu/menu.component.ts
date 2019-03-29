@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 
 export class MenuComponent implements OnInit {
-	@Input() userProps: object;
+	@Input() userProps: any;
 	@Input() openMenu:boolean
 	@Output() close = new EventEmitter()
 

@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 
 export class DetailsComponent implements OnInit, OnDestroy {
 	private urlRoute: any;
-	private userData: any;
+	userData: any;
 
 	constructor(private router: Router, private route: ActivatedRoute) {}
 
