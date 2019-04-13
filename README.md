@@ -1,5 +1,15 @@
 # PWA Beca IOS - Everis Brasil
 
+Repository created for a dynamics performed in Everis's internal training program named Beca.
+
+Here we have an application in Angular 7, which was converted to a PWA (Progressive Web App). This sample has the following features:
+
+	- manifest and service worker
+	- a responsive layout
+	- application theming
+	- offline UI
+	- simple routing solution
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
